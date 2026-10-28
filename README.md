@@ -1,208 +1,51 @@
-# 📊 Sales Performance Analysis
+# Sales Performance Analysis
 
-A MySQL-based data analytics project focused on sales performance, employee performance, product revenue, department analysis, and business insights.
+A MySQL portfolio project that explores sales, employee, product, and department performance using a sample relational dataset. The project includes schema setup, data loading, validation, analysis queries, screenshots, and supporting documentation.
 
-## 📌 Project Overview
+## Project workflow
 
-This project analyzes a small sales dataset using MySQL to generate business insights related to employee performance, product revenue, department performance, and overall sales.
+Run the SQL scripts in order in MySQL Workbench or another MySQL client:
 
-The project was developed as a hands-on SQL analytics project covering the complete workflow from database creation and data loading to analysis and documentation.
+1. `sql/01_create_database.sql` creates the database.
+2. `sql/02_create_tables.sql` creates the employee, product, and sales tables.
+3. `sql/03_insert_data.sql` loads the sample records.
+4. `sql/04_data_validation.sql` checks the loaded data and relationships.
+5. `sql/05_basic_analysis.sql` calculates company-level sales measures.
+6. `sql/06_employee_analysis.sql` compares employee sales and rankings.
+7. `sql/07_product_analysis.sql` analyzes product and category performance.
+8. `sql/08_department_analysis.sql` compares department revenue and staffing.
+9. `sql/09_advanced_analysis.sql` uses CTEs and window functions for rankings and contribution analysis.
 
-## 🎯 Business Objective
+The queries report measures such as revenue, order counts, average order value, employee rankings, product contribution, and department performance. Results depend on the sample data loaded by the setup scripts.
 
-The objective of this project is to analyze sales data and provide management with insights into:
+## Repository layout
 
-- Overall company revenue
-- Employee sales performance
-- Department revenue
-- Product performance
-- Revenue contribution
-- Employee rankings
-- Product rankings
-- Top-performing employees within departments
-
-## ❓ Business Questions
-
-The analysis aims to answer the following questions:
-
-1. What is the total company revenue?
-2. How many sales orders were generated?
-3. What is the average order value?
-4. Which employee generated the highest revenue?
-5. Which department generated the highest revenue?
-6. Which product generated the highest revenue?
-7. What percentage of company revenue does each product contribute?
-8. Who is the top-performing employee in each department?
-9. How many orders does each employee handle?
-10. Which products and departments contribute most to total revenue?
-
-## 🛠️ Tools & Technologies
-
-- MySQL
-- MySQL Workbench
-- SQL
-- Git
-- GitHub
-- Markdown
-
-## 🗄️ Database Structure
-
-The project uses a relational database consisting of three tables:
-
-    - Employees
-
-Stores employee information.
-
-    - Products
-
-Stores product and category information.
-
-    - Sales
-
-Stores individual sales transactions and connects employees with products.
-
-### Table Relationships
-
-employees
-    |
-    | employee_id
-    |
-    v
-sales
-    ^
-    |
-    | product_id
-    |
-products
-
-## 🧠 SQL Concepts Demonstrated
-
-This project demonstrates the following SQL concepts:
-
-- SELECT
-- WHERE
-- GROUP BY
-- HAVING
-- ORDER BY
-- INNER JOIN
-- LEFT JOIN
-- Aggregate Functions
-- CASE WHEN
-- COALESCE
-- Subqueries
-- Common Table Expressions (CTEs)
-- Window Functions
-- DENSE_RANK()
-- SUM() OVER()
-- Revenue Contribution Analysis
-
-## 📁 Project Structure
-
+```text
 sales-performance-analysis/
-│
-├── README.md
-│
-├── sql/
-│   ├── 01_create_database.sql
-│   ├── 02_create_tables.sql
-│   ├── 03_insert_data.sql
-│   ├── 04_data_validation.sql
-│   ├── 05_basic_analysis.sql
-│   ├── 06_employee_analysis.sql
-│   ├── 07_product_analysis.sql
-│   ├── 08_department_analysis.sql
-│   └── 09_advanced_analysis.sql
-│
-├── documentation/
-│   ├── data_dictionary.md
-│   └── business_questions.md
-│
-└── screenshots/
+|-- README.md
+|-- sql/                 # Setup, data, validation, and analysis scripts
+|-- docs/                # Business questions and data dictionary
+`-- screenshots/         # MySQL Workbench evidence for each workflow step
+```
 
-## 🔄 Project Workflow
+## Analysis topics
 
-The project follows the following analytical workflow:
+- Revenue, order volume, average order value, and high/low order values
+- Employee and department performance
+- Product/category revenue and contribution
+- Ranking with `DENSE_RANK()`
+- CTEs, joins, aggregates, CASE expressions, and window functions
 
-1. Define the business problem
-2. Design the database structure
-3. Create the MySQL database
-4. Create relational tables
-5. Load sample data
-6. Validate the data
-7. Perform exploratory analysis
-8. Analyze employee performance
-9. Analyze product performance
-10. Analyze department performance
-11. Perform advanced SQL analysis
-12. Generate business insights
-13. Document the project
+## Documentation and evidence
 
-## 🔍 Analysis Methodology
+- [Business questions](docs/business_questions.md)
+- [Data dictionary](docs/data_dictionary.md)
+- Screenshots are grouped under [`screenshots/`](screenshots/).
 
-The analysis was performed in multiple stages.
+## Tools
 
-1. Data Preparation
+MySQL, MySQL Workbench, SQL, Git, and GitHub.
 
-Created the database schema and loaded employee, product, and sales data.
+## Author
 
-2. Data Validation
-
-Checked table records, row counts, and relationships between tables.
-
-3. Exploratory Analysis
-
-Calculated basic business KPIs such as revenue, order count, average order value, minimum value, and maximum value.
-
-4. Employee Analysis
-
-Analyzed employee revenue, order volume, average order value, and rankings.
-
-5. Product Analysis
-
-Analyzed product revenue, order volume, category performance, and revenue contribution.
-
-6. Department Analysis
-
-Analyzed department revenue, employee count, and average performance.
-
-7. Advanced Analysis
-
-Applied CTEs, subqueries, and window functions for ranking and contribution analysis.
-
-## 📈 Key Results
-
-The final results will include:
-
-- Total company revenue
-- Total number of orders
-- Average order value
-- Highest-value order
-- Lowest-value order
-- Top-performing employee
-- Highest-revenue department
-- Highest-revenue product
-- Product revenue contribution
-- Employee rankings
-- Department rankings
-
-## 🚀 Future Enhancements
-
-This project can be extended with:
-
-- Excel dashboard
-- Power BI dashboard
-- Monthly sales analysis
-- Time-series analysis
-- Sales targets
-- Profit analysis
-- Customer analysis
-- Advanced KPIs
-- Automated reporting
-
-## 👤 Author
-
-**Pradeep Mishra**
-
-Data Analytics | SQL | Excel | Power BI | Business Analysis
-
-This project was created as part of my hands-on Data Analytics learning and portfolio development.
+Pradeep Mishra
